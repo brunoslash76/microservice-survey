@@ -43,9 +43,7 @@ exports.save = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                console.log(req);
                 body = req.body;
-                console.log(body);
                 return [4 /*yield*/, firebase_1.saveAnswers(body)];
             case 1:
                 response = _a.sent();
