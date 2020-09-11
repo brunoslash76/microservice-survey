@@ -8,7 +8,8 @@
     "start": "node ./build/index.js",
     "dev": "ts-node src/index.ts",
     "start:watch": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "heroku:config": "./config.heroku.sh"
   },
   "author": "",
   "license": "ISC",
