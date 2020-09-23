@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.save = void 0;
+exports.index = exports.save = void 0;
 var firebase_1 = require("../../services/firebase");
 exports.save = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var body, response;
@@ -49,6 +49,26 @@ exports.save = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 response = _a.sent();
                 res.status(200).send({ success: true, userInfo: response });
                 return [2 /*return*/];
+        }
+    });
+}); };
+exports.index = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var response, error_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                return [4 /*yield*/, firebase_1.findAll()];
+            case 1:
+                response = _a.sent();
+                console.log(response);
+                res.status(200).send(response);
+                return [3 /*break*/, 3];
+            case 2:
+                error_1 = _a.sent();
+                console.log(error_1);
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
     });
 }); };

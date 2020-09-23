@@ -50,7 +50,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.saveAnswers = void 0;
+exports.findAll = exports.saveAnswers = void 0;
 var firebase_1 = __importDefault(require("../config/firebase"));
 exports.saveAnswers = function (data) { return __awaiter(void 0, void 0, void 0, function () {
     var response, error_1;
@@ -69,6 +69,21 @@ exports.saveAnswers = function (data) { return __awaiter(void 0, void 0, void 0,
                 error_1 = _a.sent();
                 throw new Error(error_1);
             case 3: return [2 /*return*/];
+        }
+    });
+}); };
+exports.findAll = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var db, ref, response;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                db = firebase_1.default.database();
+                ref = db.ref('survey');
+                return [4 /*yield*/, ref.once('value')];
+            case 1:
+                response = _a.sent();
+                console.log(response);
+                return [2 /*return*/, response];
         }
     });
 }); };

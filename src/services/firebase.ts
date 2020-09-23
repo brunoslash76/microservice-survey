@@ -14,3 +14,9 @@ export const saveAnswers = async (data: TData) => {
         throw new Error(error)
     }
 }
+
+export const findAll = async () => {
+        const db = firebase.database()
+        const ref = db.ref('survey')
+        return await ref.once('value')
+}
